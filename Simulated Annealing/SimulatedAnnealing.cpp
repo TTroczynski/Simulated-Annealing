@@ -33,7 +33,7 @@ Solution SimulatedAnnealing::run()
 				double frac = candidate.value() - currentSolution.value();
 				double probability = 1 / exp(frac / currentTemperature);
 
-				std::cout << "Probability = " << probability << std::endl;
+				std::cout << "New Candidate < current solution. Selection Probability = " << probability << std::endl;
 				probTemp = probability;
 
 				double r = (double)(rand() % 1000) / 1000;
@@ -44,7 +44,7 @@ Solution SimulatedAnnealing::run()
 					yes++;
 				}
 				else{
-					std::cout << "Found better solution" << std::endl;
+					std::cout << "Taking better solution" << std::endl;
 					no++;
 				}
 			}
